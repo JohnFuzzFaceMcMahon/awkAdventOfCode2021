@@ -1,0 +1,12 @@
+Howdy,
+
+Today's code is a bit messy. I lost track of what I was doing and
+overwrote the wrong file. I need to get more sleep. Everything
+works properly, just a bit on the ugly side. Part 2 was supposed
+to be minor tweaks to Part 1. It didn't quite work out as planned.
+
+POST NO BILLS!
+
+Cheers,
+Fuzz
+
