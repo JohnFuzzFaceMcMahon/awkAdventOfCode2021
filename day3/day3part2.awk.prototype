@@ -1,0 +1,69 @@
+BEGIN {
+
+}
+
+{
+    # Length Of Input 
+    inputLength=length($0);
+    # Save A Copy Of The Original Array
+    a[NR]=$0;
+    # OG Rating Reduction Array
+    og[NR]=$0;
+
+    print "INGEST " NR " " $0;
+
+}
+
+END {
+    # OG
+    # which bit are we working on
+    for (bit=1;bit<inputLength+1;bit++) {
+        print "TOP OF LOOP - LOOKING AT BIT POSITION " bit;
+        # value counters
+        xZero=0;
+        xOne=0;
+        # Count the values (1/0) in column bit in the OG array
+        for (ind=1;ind<NR+1;ind++) {
+            thisBit=substr( og[ind], bit, 1);
+            if (thisBit!="") {
+                if (thisBit=="1") { xOne++; } else { xZero++; }
+            }
+            print "COUNTING AT BIT POSITION " bit " INDEX " ind " VALUE " og[ind] " THISBIT " thisBit " ONE COUNT " xOne " ZERO COUNT " xZero;
+        }  
+        # What are we looking for?      
+        lookingFor="";
+        if ( xZero>xOne ) {
+            # looking for zero
+            lookingFor="0";
+        } else {
+            # looking for one
+            lookingFor="1";
+        }
+        print "LOOKING FOR BIT VALUE " lookingFor;
+        # Reduce!
+        for (ind=1;ind<NR+1;ind++) {
+            thisBit=substr( og[ind], bit, 1);
+            print "ITEM AT BIT POSITION " bit " INDEX " ind " VALUE " og[ind] " THISBIT " thisBit " LOOKINGFOR " lookingFor;
+            if (thisBit==lookingFor) {
+                print "SAVE AT BIT POSITION " bit " INDEX " ind " VALUE " og[ind] " THISBIT " thisBit " LOOKINGFOR " lookingFor;
+            } else {
+                print "NUKE AT BIT POSITION " bit " INDEX " ind " VALUE " og[ind] " THISBIT " thisBit " LOOKINGFOR " lookingFor;
+                og[ind]="";
+            }
+        }
+        # How Many Left?
+        howMany=0;
+        lastSeen="";
+        for (ind=1;ind<NR+1;ind++) {
+            if (og[ind]!="") {
+                howMany++;
+                lastSeen=og[ind];
+                print "COUNT INDEX " ind " VALUE " og[ind] " HOWMANY " howMany " LASTSEEN " lastSeen;
+            }
+        }  
+        if (howMany<2) {
+            print "FINAL COUNT " howMany " VALUE " lastSeen;
+            continue;
+        }
+    }
+}
