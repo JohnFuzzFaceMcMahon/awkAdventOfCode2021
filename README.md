@@ -23,6 +23,7 @@ involved in the decision making process concerning editors.
 Finally, the day0 directory has some books and URLs on awk. You should read
 them.  awk builds bodies in twelve strong ways.
 
-Cheers,
+Cheers!!!
+
 Fuzz
 
