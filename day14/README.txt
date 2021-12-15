@@ -1,3 +1,5 @@
+From the beginning
+------------------
 
 I managed to get Part 1 finished pretty easily. The code changes for Part 2 were very simple. The problem is that the
 data is growing by leaps and bounds! I'm currently running the Part 2 program on the test data. Step 20 (now complete)
@@ -25,3 +27,38 @@ Day       Time    Rank  Score       Time   Rank  Score
   2   00:09:29    6568      0   00:15:46   6785      0
   1   21:27:12  102479      0   23:13:41  93920      0
 
+2021-12-15 1637
+---------------
+
+The Part 2 code is, in a word, slow. On my now control-d'd run the stats for Step 22 out of 40
+is below. That works out to is 27.5 hours of wall clock time for one pass. Total run was
+approaching 35 hours.
+
+There must be a better way to do this.
+
+step 22 at 1639498468
+10% 629145 time since last mark 5771s
+10% 629145 speed 109.018 pair checks per second 
+20% 1258290 time since last mark 7208s
+20% 1258290 speed 96.9481 pair checks per second 
+30% 1887435 time since last mark 8332s
+30% 1887435 speed 88.5662 pair checks per second 
+40% 2516580 time since last mark 8141s
+40% 2516580 speed 85.4468 pair checks per second 
+50% 3145725 time since last mark 8927s
+50% 3145725 speed 81.9647 pair checks per second 
+60% 3774870 time since last mark 10386s
+60% 3774870 speed 77.4094 pair checks per second 
+70% 4404015 time since last mark 11061s
+70% 4404015 speed 73.6137 pair checks per second 
+80% 5033160 time since last mark 12006s
+80% 5033160 speed 70.0685 pair checks per second 
+90% 5662305 time since last mark 13017s
+90% 5662305 speed 66.7339 pair checks per second 
+100% 6291450 time since last mark 14310s
+100% 6291450 speed 63.4481 pair checks per second 
+end step 22 polymer length is 12582913 time for step 99159s
+
+Renaming Part 2 as a warning to others.
+
+More later.
